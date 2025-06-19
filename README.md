@@ -76,3 +76,65 @@ When Unity rebuilds, it may try to overwrite it. Make sure:
     frameworkUrl: "Build/YOUR_BUILD_NAME.framework.js",
     codeUrl: "Build/YOUR_BUILD_NAME.wasm",
   };
+
+  The #unity-canvas stays inside the .switch-screen container
+
+The <img id="frameOverlay"> element remains intact
+
+✅ You can update version numbers or file names as needed — just don’t remove the layout structure or frame logic.
+
+🌐 Hosting on GitHub Pages
+GitHub Pages does not support gzip compression headers.
+
+✅ Do This:
+In Unity:
+
+Go to Project Settings > Player > WebGL > Publishing Settings
+
+Set Compression Format = Disabled
+
+Then build and upload — you're ready to go.
+
+If you forget this step, you'll get errors like:
+"Unable to parse .framework.js.gz – missing Content-Encoding: gzip"
+
+🌍 Hosting on itch.io
+Yes, Nidoking works perfectly on itch.io!
+
+Steps:
+Zip your entire folder (including index.html, Build/, TemplateData/)
+
+Upload as an HTML game
+
+Set the viewport size to 1600x900
+
+(Optional) Enable fullscreen mode
+
+🎨 Customization
+Want to add your own frame?
+
+Create a 1600x900 PNG
+
+Cut out a 960x540 transparent screen area at position (320, 180)
+
+Add it to TemplateData/
+
+Update the frames object in the script section of index.html:
+js:
+
+const frames = {
+  switch: 'TemplateData/switch_overlay.png',
+  switch2: 'TemplateData/switch2_overlay.png',
+  rog: 'TemplateData/rog_ally_overlay.png',
+  beammworks: 'TemplateData/beammworks_overlay.png',
+  mycustom: 'TemplateData/my_custom_frame.png'
+};
+
+🧪 Demo / Preview
+Try out the template live at:
+https://yourusername.github.io/Nidoking/
+Or host on itch.io for public playtesting and instant embed support.
+
+🧢 Credits
+Created by BEAMMWorks
+Inspired by the feeling of playing real games on real gear — now in WebGL.
