@@ -29,39 +29,18 @@
     }
 
     .switch-wrapper {
-  width: 1600px;
-  height: 900px;
-  margin: 30px auto;
-  position: relative;
-}
+      width: 960px;
+      height: 540px;
+      margin: 30px auto;
+      position: relative;
+    }
 
-.switch-frame {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.switch-screen {
-  position: absolute;
-  top: 180px;
-  left: 320px;
-  width: 960px;
-  height: 540px;
-  z-index: 2;
-  overflow: hidden;
-}
-
-
-#unity-canvas {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
+    #unity-canvas {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
 
     #unity-footer {
       margin-top: 10px;
@@ -92,10 +71,7 @@
   <div class="tagline">Lock. Load. Lead the leaderboard. Click below to begin.</div>
 
   <div class="switch-wrapper">
-    <img src="TemplateData/switch_frame.png" class="switch-frame" alt="Nintendo Switch Frame">
-    <div class="switch-screen">
-      <canvas id="unity-canvas" width="960" height="540" tabindex="-1"></canvas>
-    </div>
+    <canvas id="unity-canvas" width="960" height="540" tabindex="-1"></canvas>
   </div>
 
   <div id="unity-loading-bar">
@@ -177,5 +153,6 @@
 
     document.body.appendChild(script);
   </script>
+
 </body>
 </html>
