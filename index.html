@@ -28,11 +28,38 @@
       opacity: 0.85;
     }
 
-    #unity-container {
+    .switch-wrapper {
+      position: relative;
+      width: 1200px;
+      height: 675px;
       margin: 30px auto;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+      background-color: #000;
+    }
+
+    .switch-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .switch-screen {
+      position: absolute;
+      top: 13.8%;
+      left: 14.1%;
+      width: 71.8%;
+      height: 72.3%;
+      z-index: 2;
       overflow: hidden;
+    }
+
+    #unity-canvas {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
     #unity-footer {
@@ -63,20 +90,25 @@
 
   <div class="tagline">Lock. Load. Lead the leaderboard. Click below to begin.</div>
 
-  <div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas" width=960 height=540 tabindex="-1"></canvas>
-    <div id="unity-loading-bar">
-      <div id="unity-logo"></div>
-      <div id="unity-progress-bar-empty">
-        <div id="unity-progress-bar-full"></div>
-      </div>
+  <div class="switch-wrapper">
+    <img src="TemplateData/switch_frame.jpg" class="switch-frame" alt="Nintendo Switch Frame">
+    <div class="switch-screen">
+      <canvas id="unity-canvas" width="960" height="540" tabindex="-1"></canvas>
     </div>
-    <div id="unity-warning"></div>
-    <div id="unity-footer">
-      <div id="unity-logo-title-footer"></div>
-      <div id="unity-fullscreen-button"></div>
-      <div id="unity-build-title">WGL Shooter</div>
+  </div>
+
+  <div id="unity-loading-bar">
+    <div id="unity-logo"></div>
+    <div id="unity-progress-bar-empty">
+      <div id="unity-progress-bar-full"></div>
     </div>
+  </div>
+  <div id="unity-warning"></div>
+
+  <div id="unity-footer">
+    <div id="unity-logo-title-footer"></div>
+    <div id="unity-fullscreen-button"></div>
+    <div id="unity-build-title">WGL Shooter</div>
   </div>
 
   <footer>
@@ -123,11 +155,6 @@
       meta.name = 'viewport';
       meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
       document.getElementsByTagName('head')[0].appendChild(meta);
-      document.querySelector("#unity-container").className = "unity-mobile";
-      canvas.className = "unity-mobile";
-    } else {
-      canvas.style.width = "960px";
-      canvas.style.height = "540px";
     }
 
     document.querySelector("#unity-loading-bar").style.display = "block";
