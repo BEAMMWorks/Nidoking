@@ -1,5 +1,4 @@
 window.addEventListener('DOMContentLoaded', () => {
-  // Everything below here is what you already have inside nidoking.config.js
 
   const canvas = document.querySelector("#unity-canvas");
 
