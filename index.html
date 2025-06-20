@@ -33,33 +33,34 @@
     }
 
     .switch-wrapper {
-  width: 1760px;
-  height: 990px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 1760px;
   margin: 30px auto;
   position: relative;
-  transform-origin: top center;
 }
 
 
-    .switch-frame {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      pointer-events: none;
-    }
 
-    .switch-screen {
-      position: absolute;
-      top: 225px;
-      left: 400px;
-      width: 960px;
-      height: 540px;
-      z-index: 2;
-      overflow: hidden;
-    }
+    .switch-frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.switch-screen {
+  position: absolute;
+  top: 12.78%;  /* 225 / 1760 */
+  left: 22.73%; /* 400 / 1760 */
+  width: 54.55%; /* 960 / 1760 */
+  height: 54.55%; /* 540 / 990 */
+  z-index: 2;
+  overflow: hidden;
+}
 
     #unity-canvas {
       width: 100%;
