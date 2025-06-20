@@ -33,11 +33,13 @@
     }
 
     .switch-wrapper {
-      width: 1760px;
-      height: 990px;
-      margin: 30px auto;
-      position: relative;
-    }
+  width: 1760px;
+  height: 990px;
+  margin: 30px auto;
+  position: relative;
+  transform-origin: top center;
+}
+
 
     .switch-frame {
       width: 100%;
@@ -85,6 +87,14 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 1760px) {
+  .switch-wrapper {
+    transform: scale(calc(100vw / 1760));
+  }
+}
+
+
   </style>
 </head>
 <body>
