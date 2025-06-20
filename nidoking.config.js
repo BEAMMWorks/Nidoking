@@ -1,4 +1,6 @@
-<script>
+window.addEventListener('DOMContentLoaded', () => {
+  // Everything below here is what you already have inside nidoking.config.js
+
   const canvas = document.querySelector("#unity-canvas");
 
   function unityShowBanner(msg, type) {
@@ -78,4 +80,4 @@
     frameOverlay.src = frames[selected];
     localStorage.setItem('frameStyle', selected);
   });
-</script>
+});
